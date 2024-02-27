@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>З клавіатури вводиться текстовий рядок. Скласти скрипт, який замінює всі великі літери, на відповідні малі.</title>
+</head>
+<body>
+    <script>
+    let inputText = prompt("Введіть текст:");
+    let result = "";
+for (let i = 0; i < inputText.length; i++) {
+    let currentChar = inputText[i];
+    if (currentChar >= 'A' && currentChar <= 'Z') {
+        result += currentChar.toLowerCase();
+    } else {
+        result += currentChar;
+    }
+}
+alert(result);
+   </script>
+</body>
+</html> 

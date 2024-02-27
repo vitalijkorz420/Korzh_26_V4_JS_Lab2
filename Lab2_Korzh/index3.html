@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Напишіть гру «Вгадай число». При завантаженні сторінки генерується випадкове число від 0 до 10. 
+        Користувачу надається три спроби вгадати число. При кожній перевірці видається підказка: більше чи менше. 
+        При вгадуванні або завершенні числа спроб видається оповіщення.Кількість спроб виводиться на екран. 
+        Результат для цієї задачі виводиться за допомогою команди alert()
+    </title>
+</head>
+<body>
+    <script>
+         const secretNumber = Math.floor(Math.random() * 11);
+        let attempts = 3;
+        function guessNumber() {
+            const userGuess = parseInt(prompt("Enter your guess:"));
+            if (isNaN(userGuess)) {
+                alert("Please enter a valid number!");
+                return;
+            }
+            if (userGuess === secretNumber) {
+                alert("Great! You guessed the correct number!");
+                return;
+            } else if (userGuess < secretNumber) {
+                alert("Try again. The number is greater than your guess.");
+            } else {
+                alert("Try again. The number is less than your guess.");
+            }
+            attempts--;
+            if (attempts === 0) {
+                alert("Game over! You have used all your attempts. The correct number was: " + secretNumber);
+            } else {
+                alert("You have " + attempts + " attempts left.");
+                guessNumber();
+            }
+        }
+        guessNumber();
+    </script>
+</body>
+</html>
