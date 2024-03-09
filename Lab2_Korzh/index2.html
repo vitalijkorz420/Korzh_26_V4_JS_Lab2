@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обчислити степінь натурального числа рекурсивно.</title>
+</head>
+<body>
+    <script>
+    function calculatePower(number, exponent) {
+        if (exponent === 0) {
+            return 1;
+        }
+        return number * calculatePower(number, exponent - 1);
+    }
+    while(true) {
+        let numberInput = prompt("Введіть число:");
+        let exponentInput = prompt("Введіть показник степеня:");
+        if (!isNaN(numberInput) && !isNaN(exponentInput)) {
+            let number = parseInt(numberInput);
+            let exponent = parseInt(exponentInput);
+            let result = calculatePower(number, exponent);
+            alert("Результат: " + result);
+        } else {
+            alert("Введіть будь ласка числа!");
+        }
+    }
+    </script>
+</body>
+</html>
